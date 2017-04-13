@@ -24,13 +24,15 @@ function sumInputs () {
 	for( var i = 0; i < array.length; i++ ){
     sum += parseInt( array[i], 10 ); //parseInt function parses a string argument and returns an integer of the specified radix
 	}
-
+	
+	var count = array.length;
 	var avg = sum/array.length;
 	var displayAverage = avg.toFixed(2); //Fixes the displayed value to round to the nearest 2 decimal points
 	
 	console.log("SUM:" + sum); //check
 	console.log("AVG:" + avg); //check
 	
+	document.getElementById("count").innerHTML = count; //Write new sum into HTML document
 	document.getElementById("sumInputs").innerHTML = sum; //Write new sum into HTML document
 	document.getElementById("avgInputs").innerHTML = displayAverage; //Write new avg into HTML document
 }
