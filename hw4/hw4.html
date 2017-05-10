@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>HW 4</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<style>
+			.hidden { display: none; }
+		</style>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<h1>Geolocation APIs</h1>
+		</div>
+		<div class="container">
+			<form>
+				<select id="mySelect" class="custom-select">
+					<option selected style="color: lightgrey;">Select a Store Location:</option>
+					<option value="1">Bellevue</option>
+					<option value="2">Interbay</option>
+					<option value="3">International District</option>
+				</select>
+			<br>
+			<br>
+			</form>
+			<div id="map1" class="hidden">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.5365731172687!2d-122.18474088383745!3d47.61570017918531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c5fe09a87c5%3A0x9a35082ba68fbda3!2sUwajimaya!5e0!3m2!1sen!2sus!4v1494454688868" width="1050" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div id="map2" class="hidden">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21518.653822260523!2d-122.35140775183734!3d47.609961576706844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x49dcf7081b0facb8!2sFuji+Bakery!5e0!3m2!1sen!2sus!4v1494452966121" width="1050" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div id="map3" class="hidden">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d672.606480747974!2d-122.32680384794482!3d47.59840722817877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x34d8a5d24895937f!2sFuji+Bakery!5e0!3m2!1sen!2sus!4v1494451966051" width="1050" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+		<br>
+		<script src="objects.js"></script>
+	</body>
+</html>
