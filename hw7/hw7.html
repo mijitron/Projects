@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>HW 7</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<style>
+			.hidden { display: none; }
+			div {padding-top: 2em; padding-bottom: 2em;}
+		</style>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<h1>Rest API</h1>
+			<br>
+			<button id="home"><a href="https://mijitron.github.io/html300-assignments/">&larr; Back to Index</a></button>
+		</div>
+		<div class="container">
+			<div id="table-page">
+				<button type="button" id="new-person">Register Now</button>
+				<br /><br />
+				<button type="button" id="get-list">See Registration List</button>
+				<br /><br />
+				<section id ="list">
+					<h2>2017 Registration List</h2>
+					<br>
+					<table>
+						<thead>
+							<tr>
+								<th style="width: 400px;">
+									Name
+								</th>
+								<th style="width: 200px;">
+									Age
+								</th>
+							</tr>
+						</thead>
+						<tbody id="people">
+						</tbody>
+					</table>
+				</section>
+				
+			</div>
+
+			<div id="form-page" style="display:none">
+				<form>
+					<label for="name">Name</label>
+					<input type="text" id="name" />
+					<br />
+					<label for="age">Age</label>
+					<input type="number" id="age" />
+					<br />
+					<br />
+					<button type="submit" id="submit">Submit</button>
+					<button type="button" id="cancel">Cancel</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		<script src="objects.js"></script>
+	</body>
+</html>
