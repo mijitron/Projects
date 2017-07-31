@@ -3,29 +3,130 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>HW 1</title>
+		<title>Project Cat Math</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	
+	<style>
+		body {
+			background: rgba(255,158,153,.15);
+		}
+		.jumbotron {
+			margin: 0;
+			border-radius: 0;
+			color: white;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9e99+0,aec6cf+100 */
+			background: #ff9e99; /* Old browsers */
+			background: -moz-linear-gradient(-45deg, #ff9e99 0%, #aec6cf 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(-45deg, #ff9e99 0%,#aec6cf 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(135deg, #ff9e99 0%,#aec6cf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9e99', endColorstr='#aec6cf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		.col {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			margin: 15px;
+			padding: 5px;
+			border-radius: 25px;
+			font-size: 36px;
+			font-weight: bolder;
+			color: white;
+			background-color: #ff9e99;
+			text-align: center;
+		}
+		.problemDisplay {
+			width: 70%;
+			margin: auto;
+			padding: 50px;
+			height: 500px;
+			border: 5px solid #ff9e99;
+			background: white;
+			border-radius: 25px;
+			text-align: center;
+			color: #ff9e99;
+		}
+		#cat img {
+			width: 300px;
+		}
+		.hidden {
+			display: none;
+		}
+		.blue {
+			background-color: rgba(100, 155, 175, 1) !important;
+		}
+		.darkpink {
+			background-color: rgba(255, 119, 112, 1) !important;
+		}
+		.green {
+			color: green !important;
+		}
+		.red {
+			color: red !important;
+		}
+		#notifications {
+			margin: auto;
+			padding: 5px;
+			width: 200px !important;
+			font-size: 18px;
+			border-radius: 10px;
+		}	
+		#catDisplay {
+			width: 100%;
+		}
+		#catDisplay img {
+			text-align: center;
+		}
+	</style>
 	</head>
     <body>
-				<div class="jumbotron">
-					<h1>JavaScript Exercise:</h1>
-					<br>
-					<button id="home"><a href="https://mijitron.github.io/html300-assignments/">&larr; Back to Index</a></button>
+			<div class="jumbotron" style="margin-bottom: 0px; border-bottom: 10px solid white;">
+				<h1>Level 1: Feed the Stray Cat with Math!</h1>
+				<p style="font-size: 20px;"><b>Instructions: </b>Correctly answer as many random addition or multiplication problems in under 2 minutes in order to gain points. The more points you earn, the more fatter the cat will get.</p>
+				<button type="button" onclick="startGame()" style="width: 200px; padding: 5px; color: white; border: none; background-color: #aec6cf; border-radius: 10px;">Click to Start</button>
+			</div>
+			<div id="gameContents" class="hidden">
+				<nav class="navbar navbar-light" style="background-color:#aec6cf; margin-bottom: 10px; ">
+					<div class="row">
+						<div class="col" style="background: none;">
+							<p style="font-size: 20px; color: white; text-align: right; margin: 0; position: relative; right: 50px;">Score: <span style="width: 250px;" id="score"></span></p>
+						</div>
+						<div class="col" style="background: none;">
+							<p style="font-size: 20px; color: white; text-align: right; margin: 0; position: relative; right: 50px;">Time Remaining: <span style="width: 250px;" id="time"></span></p>
+						</div>
+					</div>
+				</nav>
+				
+				
+				
+				<div class="problemDisplay">
+						<div id="catDisplay">
+							<img id="cat" src="https://s3-us-west-2.amazonaws.com/mijitron/cat-math-project/catcharacter.jpg" width="400px">
+						</div>
+						<div class="row">
+							<div class="col">
+								<div id="randomNumber1"></div>
+							</div>
+							<div class="col" id="operatorColorSwitch">
+								<div id="operators"></div>
+							</div>
+							<div class="col">
+								<div id="randomNumber2"></div>
+							</div>
+						</div>
+						<div class="answerField">
+							<br>
+							<h4>Quickly answer the math problem above to feed this stray kitty:</h4><br>
+								<div class="row" style="display: flex; justify-content: center;">
+									<input id="playerAnswer" style="border: none; border-radius: 10px; padding: 5px; margin-right: 5px;">
+
+									<button type="button" onclick="playerAnswer()" style="width: 100px; color: white; border: none; background-color: #ff9e99; border-radius: 10px; padding: 5px;">Submit</button>
+								</div>
+								<br>
+								<div id="notifications" style="text-align: center;"></div>
+						</div>
 				</div>
-				<div class="container">
-					  <form name="form1" >
-              <label>Enter number: 
-                <input type="text" name="num"> 
-              </label>
-            </form>
-						<br>
-            <button onclick="submit()">Submit</button>
-            <button onclick="reset()">Reset</button>
-            <br><br>
-						<div>Count: <span id="count">0</span></div>
-            <div>Sum: <span id="sumInputs">0</span></div>
-            <div>Average: <span id="avgInputs">0</span></div>
-				</div>
-        <script src="objects.js"></script>
+			</div>
+				
+      <script src="objects.js"></script>
     </body>
 </html>
