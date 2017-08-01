@@ -1,3 +1,8 @@
+//empty array to keep lowest time scores
+var bestTimes = [];
+
+
+
 //timer settings
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -109,6 +114,17 @@ function playerAnswer() {
 		newProblem();
 		document.getElementById("playerAnswer").value = "";
 }
+
+var timeRecord;
+
+function youWin() {
+	timeRecord = setTimeout(function(){
+	alert("Congratulations, you've done such a great job feeding the stray that his belly just exploded!!!");
+	var userID = prompt("What's your name Math Wiz?");
+	console.log(userID);
+	location.reload(); 
+	}, 7000);
+}
 	
 function displayCat() {
 	if (score == 0) {
@@ -132,10 +148,11 @@ function displayCat() {
 	} else if (score == 90) {
 		document.getElementById("cat").src="https://s3-us-west-2.amazonaws.com/mijitron/cat-math-project/catcharacter10.jpg";
 	} else if (score == 100) {
-		alert("Congratulations, you've done such a great job feeding the stray that his belly just exploded!!!");
-		document.getElementById("cat").src="https://s3-us-west-2.amazonaws.com/mijitron/cat-math-project/bomb-cat.gif";
-		location.reload(); 
+		document.getElementById("cat").src="https://s3-us-west-2.amazonaws.com/mijitron/cat-math-project/bomb-cat.gif"; 
+		youWin();
 	}
 }
+
+
 
 
